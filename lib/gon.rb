@@ -1,16 +1,9 @@
-if defined?(Jbuilder)
-  gem 'blankslate'
-end
 require 'action_view'
 require 'action_controller'
 require 'gon/helpers'
 require 'gon/escaper'
-if defined?(Rabl)
-  require 'gon/rabl'
-end
-if defined?(Jbuilder)
-  require 'gon/jbuilder'
-end
+require 'gon/rabl'
+require 'gon/jbuilder'
 
 module Gon
   class << self
@@ -84,11 +77,6 @@ module Gon
           set_variable(builder_name, data)
         end
       end
-    end
-    alias_method :orig_jbuilder, :jbuilder
-
-    def jbuilder(*options)
-      orig_jbuilder(*options)
     end
 
     private
