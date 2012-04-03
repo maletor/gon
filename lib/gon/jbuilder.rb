@@ -1,3 +1,5 @@
+require 'jbuilder'
+
 module Gon
   module Jbuilder
     class << self
